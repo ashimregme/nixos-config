@@ -2,7 +2,7 @@
 
 {
   imports = [
-    ./firefox.nix
+    ./firefox/firefox.nix
     ./zsh.nix
     ./terminal.nix
     ./dconf.nix
