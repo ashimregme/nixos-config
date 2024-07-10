@@ -30,14 +30,17 @@
     automatic = true;
     options = "--delete-older-than 7d";
   };
+  nix.settings.allowed-users = [ "@wheel" ];
 
   documentation.nixos.enable = false;
 
+  environment.defaultPackages = lib.mkForce [];
   environment.gnome.excludePackages = with pkgs.gnome; [
     pkgs.gnome-tour
   ];
 
   security.rtkit.enable = true;
+  security.sudo.execWheelOnly = true;
 
   virtualisation.docker.enable = true;
 }

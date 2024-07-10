@@ -13,6 +13,6 @@
     libinput.enable = false; # Touchpad support (enabled by default in most desktopManager).
     journald.storage = "volatile"; # Store journald logs only in RAM (to be kind to ssd)
 
-    openssh.enable = true; # Enable the OpenSSH daemon.
+    openssh.enable = false; # Enable the OpenSSH daemon.
   };
 }
