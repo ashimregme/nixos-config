@@ -26,6 +26,12 @@
       "org/gnome/desktop/interface" = {
         clock-show-weekday = true;
       };
+
+      # To avoid "no default hypervisor" warning, see: https://nixos.wiki/wiki/Virt-manager
+      "org/virt-manager/virt-manager/connections" = {
+        autoconnect = ["qemu:///system"];
+        uris = ["qemu:///system"];
+      };
     };
   };
 }

@@ -1,4 +1,4 @@
-{ config, pkgs, ... }:
+{ config, pkgs, lib, ... }:
 
 {
   imports =
@@ -43,4 +43,5 @@
   security.sudo.execWheelOnly = true;
 
   virtualisation.docker.enable = true;
+  virtualisation.libvirtd.enable = true;
 }
