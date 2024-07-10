@@ -11,6 +11,7 @@
       ./main/programs.nix
       ./services/services.nix
       ./users/users.nix
+      ./systemd-timer.nix
     ];
 
   system.stateVersion = "24.05";
