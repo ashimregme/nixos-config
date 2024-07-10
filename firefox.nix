@@ -31,7 +31,7 @@ in {
       DisplayBookmarksToolbar = "newtab";
       HardwareAcceleration = true;
       DNSOverHTTPS = {
-        Enabled = false;
+        Enabled = false; # Disabled in favor of router's https-dns-proxy
         Locked = true;
       };
       FirefoxHome = {
