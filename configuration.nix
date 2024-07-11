@@ -9,6 +9,7 @@
       ./main/hardware-services.nix
       ./main/system-packages.nix
       ./main/programs.nix
+      ./users/users.nix
       ./services/services.nix
       ./systemd-timer.nix
     ];
@@ -41,12 +42,4 @@
 
   virtualisation.docker.enable = true;
   virtualisation.libvirtd.enable = true;
-
-  users.users.ashim  = {
-    isNormalUser = true;
-    description = "Ashim Regmi";
-    extraGroups = [ "networkmanager" "wheel" "docker" "i2c" ];
-    initialPassword = "changeme";
-    shell = pkgs.zsh;
-  };
 }

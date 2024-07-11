@@ -9,28 +9,17 @@
     };
   };
 
-  outputs = inputs@{ nixpkgs, home-manager, ... }:
-  let
-    system = "x86_64-linux";
-    unstable = import nixpkgs { inherit system; };
-  in {
-    nixosConfigurations = {
-      homestation = nixpkgs.lib.nixosSystem {
+  outputs = { self, nixpkgs, ... } @inputs:
+    let
+      system = "x86_64-linux";
+      pkgs = nixpkgs.legacyPackages.${system};
+    in {
+      nixosConfigurations.homestation = nixpkgs.lib.nixosSystem {
+        specialArgs = { inherit inputs; };
         modules = [
           ./configuration.nix
-
-          home-manager.nixosModules.home-manager
-          {
-            home-manager = {
-              useUserPackages = true;
-              useGlobalPkgs = true;
-              backupFileExtension = "backup";
-              users.ashim = import ./home-manager/ashim-home.nix;
-              extraSpecialArgs = { inherit unstable; };
-            };
-          }
+          inputs.home-manager.nixosModules.default
         ];
       };
     };
-  };
 }
