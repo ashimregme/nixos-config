@@ -14,6 +14,7 @@
       nixreb = "sudo nixos-rebuild switch";
       nixcog = "sudo nix-collect-garbage --delete-older-than 14d";
       nixopt = "sudo nix-store --optimise";
+      nixrepl = "nix repl -f '<nixpkgs>'";
       traceroute = "() { nix-shell -p traceroute --command \"traceroute $1\" --pure ;}";
     };
     history = {
