@@ -40,7 +40,7 @@
         unzip
         ddcutil #brightness control
 
-        ulauncher
+        albert
       ];
     };
 
