@@ -15,7 +15,18 @@
       pkgs = nixpkgs.legacyPackages.${system};
     in {
       nixosConfigurations.homestation = nixpkgs.lib.nixosSystem {
-        specialArgs = { inherit inputs; };
+        specialArgs = {
+          inherit inputs;
+          pkgs = import nixpkgs {
+            system = "x86_64-linux";
+            config = {
+              allowUnfree = true;
+              permittedInsecurePackages = [
+                "openssl-1.1.1w"
+              ];
+            };
+          };
+        };
         modules = [
           ./configuration.nix
           inputs.home-manager.nixosModules.default

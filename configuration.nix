@@ -19,13 +19,6 @@
   time.timeZone = "Asia/Kathmandu";
   i18n.defaultLocale = "en_US.UTF-8";
 
-  nixpkgs.config = {
-    allowUnfree = true;
-    permittedInsecurePackages = [
-      "openssl-1.1.1w"
-    ];
-  };
-
   nix.gc = {
     automatic = true;
     options = "--delete-older-than 7d";
