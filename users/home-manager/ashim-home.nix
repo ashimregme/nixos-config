@@ -30,7 +30,7 @@
       zip
       unzip
 
-      ddcutil #gnome brightness control
+      ddcutil #brightness control
     ];
   };
 

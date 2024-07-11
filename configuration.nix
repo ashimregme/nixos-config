@@ -35,9 +35,6 @@
   documentation.nixos.enable = false;
 
   environment.defaultPackages = lib.mkForce [];
-  environment.gnome.excludePackages = with pkgs.gnome; [
-    pkgs.gnome-tour
-  ];
 
   security.rtkit.enable = true;
   security.sudo.execWheelOnly = true;
