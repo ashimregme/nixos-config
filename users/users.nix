@@ -10,7 +10,7 @@
   };
 
   home-manager = {
-    specialArgs = { inherit inputs; };
+    extraSpecialArgs = { inherit inputs; };
     useUserPackages = true;
     useGlobalPkgs = true;
     backupFileExtension = "backup";
