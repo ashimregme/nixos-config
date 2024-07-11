@@ -10,7 +10,6 @@
       ./main/system-packages.nix
       ./main/programs.nix
       ./services/services.nix
-      ./users/users.nix
       ./systemd-timer.nix
     ];
 
@@ -31,6 +30,7 @@
     options = "--delete-older-than 7d";
   };
   nix.settings.allowed-users = [ "@wheel" ];
+  nix.settings.experimental-features = [ "nix-command" "flakes" ];
 
   documentation.nixos.enable = false;
 
@@ -41,4 +41,12 @@
 
   virtualisation.docker.enable = true;
   virtualisation.libvirtd.enable = true;
+
+  users.users.ashim  = {
+    isNormalUser = true;
+    description = "Ashim Regmi";
+    extraGroups = [ "networkmanager" "wheel" "docker" "i2c" ];
+    initialPassword = "changeme";
+    shell = pkgs.zsh;
+  };
 }
