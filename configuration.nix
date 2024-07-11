@@ -9,8 +9,8 @@
       ./main/hardware-services.nix
       ./main/system-packages.nix
       ./main/programs.nix
-      ./services/services.nix
       ./users/users.nix
+      ./services/services.nix
       ./systemd-timer.nix
     ];
 
@@ -31,6 +31,7 @@
     options = "--delete-older-than 7d";
   };
   nix.settings.allowed-users = [ "@wheel" ];
+  nix.settings.experimental-features = [ "nix-command" "flakes" ];
 
   documentation.nixos.enable = false;
 

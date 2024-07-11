@@ -1,7 +1,6 @@
-{ config, pkgs, ... }:
+{ config, pkgs, inputs, ... }:
 
 {
-  imports = [ <home-manager/nixos> ];
   users.users.ashim = {
     isNormalUser = true;
     description = "Ashim Regmi";
@@ -11,6 +10,7 @@
   };
 
   home-manager = {
+    extraSpecialArgs = { inherit inputs; };
     useUserPackages = true;
     useGlobalPkgs = true;
     backupFileExtension = "backup";
