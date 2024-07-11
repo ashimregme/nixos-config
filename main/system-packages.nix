@@ -5,12 +5,12 @@
     gnomeExtensions.gsconnect
     vlc
     google-chrome
+    gnome-calculator
+    gnome-system-monitor
+    gnome-disk-utility
+    nautilus
+    eog
     gnome.gnome-clocks
-    gnome.gnome-calculator
-    gnome.gnome-system-monitor
-    gnome.gnome-disk-utility
-    gnome.nautilus
-    gnome.eog
     wget
     gnupg
   ];
