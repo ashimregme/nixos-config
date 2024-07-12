@@ -7,12 +7,18 @@
       "org/gnome/settings-daemon/plugins/media-keys" = {
         custom-keybindings = [
           "/org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom0/"
+          "/org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom1/"
         ];
       };
       "org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom0" = {
         binding = "<Ctrl><Alt>t";
         command = "terminator";
-        name = "open-terminal";
+        name = "open terminal";
+      };
+      "org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom1" = {
+        binding = "<Ctrl><Alt>space";
+        command = "albert toggle";
+        name = "open albert";
       };
       "org/gnome/shell" = {
         disable-user-extensions = false;

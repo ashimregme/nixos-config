@@ -54,7 +54,7 @@
     };
   };
 
-  # Equivalent to command 'systemctl --user enable ulauncher'
-  systemd.packages = with pkgs; [ ulauncher ];
-  systemd.user.services.ulauncher.wantedBy = [ "default.target" ];
+  # Equivalent to command 'systemctl --user enable albert'
+  systemd.packages = with pkgs; [ albert ];
+  systemd.user.services.albert.wantedBy = [ "default.target" ];
 }
