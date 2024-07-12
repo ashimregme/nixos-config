@@ -56,5 +56,15 @@
 
   # Equivalent to command 'systemctl --user enable albert'
   systemd.packages = with pkgs; [ albert ];
-  systemd.user.services.albert.wantedBy = [ "default.target" ];
+  systemd.user.services.albert = {
+    enable = true;
+    wantedBy = [ "default.target" ];
+    description = "Launcher application: albert";
+    serviceConfig = {
+      ExecStart = "${pkgs.albert}/bin/albert";
+      wantedBy = [ "default.target" ];
+      Restart = "on-failure";
+      RestartSec = "10s";
+    };
+  };
 }
