@@ -1,6 +1,9 @@
 { config, pkgs, systemd, ... }:
 
 {
+  imports = [
+    ./stylix.nix
+  ];
   users.users.ashim = {
     isNormalUser = true;
     description = "Ashim Regmi";
