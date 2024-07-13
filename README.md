@@ -6,7 +6,7 @@
 - VLC
 - Single user with home-manager
 - Flake based
-- systemd-resolved for local DNS server
+- systemd-resolved for local DNS resolution
 - systemd-boot
 - GSConnect
 - stylix (disabled for now)
