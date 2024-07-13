@@ -42,6 +42,8 @@
         zip
         unzip
         ddcutil #brightness control
+        lsof
+        dig
 
         albert
       ];
