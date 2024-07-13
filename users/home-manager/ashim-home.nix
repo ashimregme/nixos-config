@@ -49,6 +49,7 @@
 
     programs = {
       home-manager.enable = true; # Let Home Manager install and manage itself.
+      thunderbird.enable = true;
       git = {
         enable = true;
         userName = "Ashim Regmi";
