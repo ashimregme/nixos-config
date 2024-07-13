@@ -49,7 +49,10 @@
 
     programs = {
       home-manager.enable = true; # Let Home Manager install and manage itself.
-      thunderbird.enable = true;
+      thunderbird = {
+        enable = true;
+        profiles = { };
+      };
       git = {
         enable = true;
         userName = "Ashim Regmi";
