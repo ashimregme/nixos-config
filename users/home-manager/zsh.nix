@@ -16,6 +16,7 @@
       nixopt = "sudo nix-store --optimise";
       nixrepl = "nix repl -f '<nixpkgs>'";
       traceroute = "() { nix-shell -p traceroute --command \"traceroute $1\" --pure ;}";
+      setbri = "() { nix-shell -p ddcutil --command \"ddcutil setvcp 10 $1\" ;}";
     };
     history = {
       size = 100000;
