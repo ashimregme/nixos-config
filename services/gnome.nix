@@ -13,11 +13,11 @@
   environment.systemPackages = with pkgs; [
     gnomeExtensions.appindicator
     gnomeExtensions.gsconnect
-    gnome-calculator
-    gnome-system-monitor
-    gnome-disk-utility
-    nautilus
-    eog
+    gnome.gnome-calculator
+    gnome.gnome-system-monitor
+    gnome.gnome-disk-utility
+    gnome.nautilus
+    gnome.eog
     gnome.gnome-clocks
   ];
 
