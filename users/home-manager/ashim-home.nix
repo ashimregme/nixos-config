@@ -47,6 +47,11 @@
 
         albert
       ];
+
+      file."${config.home-manager.users.ashim.xdg.configHome}/autostart/albert.desktop" = {
+        enable = true;
+        source = "${pkgs.albert}/share/applications/albert.desktop";
+      };
     };
 
     programs = {
