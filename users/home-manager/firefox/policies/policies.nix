@@ -58,9 +58,12 @@
     RequestedLocales = "en-US";
 
     SanitizeOnShutdown = {
+      Cache = true;
       Cookies = false;
-      Downloads = true;
-      FormData = true;
+      History = false;
+      Sessions = false;
+      SiteSettings = false;
+      OfflineApps = false;
       Locked = true;
     };
 
@@ -71,6 +74,23 @@
       SkipOnboarding = true;
       MoreFromMozilla = false;
       Locked = true;
+    };
+
+    PopupBlocking = {
+      Allow = [
+        "https://proton.me"
+        "https://zoho.com"
+        "https://duckduckgo.com"
+        "https://google.com"
+        "https://github.com"
+        "https://nixos.org"
+        "https://firefox.com"
+        "https://messenger.com"
+        "https://youtube.com"
+        "https://outlook.com"
+      ];
+      Default = true;
+      Locked = false;
     };
 
     Bookmarks = [ ];
