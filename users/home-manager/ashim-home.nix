@@ -38,7 +38,6 @@
         ventoy-full
         neofetch
         aria2
-        persepolis #GUI for aria2
         zip
         unzip
         ddcutil #brightness control
@@ -51,6 +50,11 @@
       file."${config.home-manager.users.ashim.xdg.configHome}/autostart/albert.desktop" = {
         enable = true;
         source = "${pkgs.albert}/share/applications/albert.desktop";
+      };
+
+      file."${config.home-manager.users.ashim.xdg.configHome}/autostart/thunderbird.desktop" = {
+        enable = true;
+        source = "${pkgs.thunderbird}/share/applications/thunderbird.desktop";
       };
     };
 
