@@ -43,6 +43,10 @@
         ddcutil #brightness control
         lsof
         dig
+        vlc
+        google-chrome
+        wget
+        gnupg
 
         albert
       ];
