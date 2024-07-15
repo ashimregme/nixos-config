@@ -60,6 +60,11 @@
         enable = true;
         source = "${pkgs.thunderbird}/share/applications/thunderbird.desktop";
       };
+
+      file."${config.home-manager.users.ashim.xdg.configHome}/autostart/firefox.desktop" = {
+        enable = true;
+        source = "${pkgs.firefox}/share/applications/firefox.desktop";
+      };
     };
 
     programs = {
