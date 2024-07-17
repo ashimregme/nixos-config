@@ -52,17 +52,17 @@
       ];
 
       file."${config.home-manager.users.ashim.xdg.configHome}/autostart/albert.desktop" = {
-        enable = true;
+        enable = false;
         source = "${pkgs.albert}/share/applications/albert.desktop";
       };
 
       file."${config.home-manager.users.ashim.xdg.configHome}/autostart/thunderbird.desktop" = {
-        enable = true;
+        enable = false;
         source = "${pkgs.thunderbird}/share/applications/thunderbird.desktop";
       };
 
       file."${config.home-manager.users.ashim.xdg.configHome}/autostart/firefox.desktop" = {
-        enable = true;
+        enable = false;
         source = "${pkgs.firefox}/share/applications/firefox.desktop";
       };
     };
