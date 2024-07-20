@@ -2,7 +2,8 @@
   description = "NixOS configuration";
 
   inputs = {
-    nixpkgs.url = "github:nixos/nixpkgs/nixos-24.05";
+    nixpkgs.url = "nixpkgs/nixos-24.05";
+    nixpkgs-unstable.url = "nixpkgs/nixos-unstable";
     stylix.url = "github:ashimregme/stylix";
     home-manager = {
       url = "github:nix-community/home-manager/release-24.05";
@@ -10,10 +11,13 @@
     };
   };
 
-  outputs = { self, nixpkgs, ... } @inputs:
+  outputs = { self, nixpkgs, nixpkgs-unstable, ... } @inputs:
     let
       system = "x86_64-linux";
       pkgs = nixpkgs.legacyPackages.${system};
+      overlay-unstable = final: prev: {
+        unstable = nixpkgs-unstable.legacyPackages.${prev.system};
+      };
     in {
       nixosConfigurations.homestation = nixpkgs.lib.nixosSystem {
         specialArgs = {
@@ -26,6 +30,7 @@
                 "openssl-1.1.1w"
               ];
             };
+            overlays = [ overlay-unstable ];
           };
         };
         modules = [
