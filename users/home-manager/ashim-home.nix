@@ -47,22 +47,22 @@
         google-chrome
         wget
         gnupg
-
+        gimp
         albert
       ];
 
       file."${config.home-manager.users.ashim.xdg.configHome}/autostart/albert.desktop" = {
-        enable = false;
+        enable = true;
         source = "${pkgs.albert}/share/applications/albert.desktop";
       };
 
       file."${config.home-manager.users.ashim.xdg.configHome}/autostart/thunderbird.desktop" = {
-        enable = false;
+        enable = true;
         source = "${pkgs.thunderbird}/share/applications/thunderbird.desktop";
       };
 
       file."${config.home-manager.users.ashim.xdg.configHome}/autostart/firefox.desktop" = {
-        enable = false;
+        enable = true;
         source = "${pkgs.firefox}/share/applications/firefox.desktop";
       };
     };
