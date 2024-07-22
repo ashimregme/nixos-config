@@ -36,6 +36,8 @@
       Locked = false;
     };
 
+    CaptivePortal = false;
+
     FirefoxSuggest = {
       WebSuggestions = true;
       SponsoredSuggestions = false;
