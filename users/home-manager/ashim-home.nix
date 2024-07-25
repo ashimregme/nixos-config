@@ -51,6 +51,11 @@
         albert
       ];
 
+      file."${config.home-manager.users.ashim.xdg.configHome}/autostart/protonvpn-app.desktop" = {
+        enable = true;
+        source = "${pkgs.protonvpn-gui}/share/applications/protonvpn-app.desktop";
+      };
+
       file."${config.home-manager.users.ashim.xdg.configHome}/autostart/albert.desktop" = {
         enable = true;
         source = "${pkgs.albert}/share/applications/albert.desktop";
