@@ -18,6 +18,19 @@
       overlay-unstable = final: prev: {
         unstable = nixpkgs-unstable.legacyPackages.${prev.system};
       };
+      overlay-gnome = final: prev: {
+        gnome = prev.gnome.overrideScope (gnomeFinal: gnomePrev: {
+          mutter = gnomePrev.mutter.overrideAttrs (old: {
+            src = pkgs.fetchFromGitLab  {
+              domain = "gitlab.gnome.org";
+              owner = "vanvugt";
+              repo = "mutter";
+              rev = "triple-buffering-v4-46";
+              hash = "sha256-nz1Enw1NjxLEF3JUG0qknJgf4328W/VvdMjJmoOEMYs=";
+            };
+          });
+        });
+      };
     in {
       nixosConfigurations.homestation = nixpkgs.lib.nixosSystem {
         specialArgs = {
@@ -30,7 +43,10 @@
                 "openssl-1.1.1w"
               ];
             };
-            overlays = [ overlay-unstable ];
+            overlays = [
+              overlay-unstable
+              overlay-gnome
+            ];
           };
         };
         modules = [
