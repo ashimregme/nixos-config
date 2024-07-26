@@ -30,7 +30,15 @@
         ];
       };
       "org/gnome/desktop/interface" = {
+        clock-format = "24h";
         clock-show-weekday = true;
+        enable-hot-corners = true;
+        show-battery-percentage = true;
+      };
+
+      "org/gnome/desktop/sound" = {
+        allow-volume-above-100-percent = true;
+        event-sounds = true;
       };
 
       # To avoid "no default hypervisor" warning, see: https://nixos.wiki/wiki/Virt-manager

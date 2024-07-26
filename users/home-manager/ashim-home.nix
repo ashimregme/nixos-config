@@ -2,7 +2,6 @@
 
 {
   imports = [
-    ./stylix.nix
   ];
   users.users.ashim = {
     isNormalUser = true;

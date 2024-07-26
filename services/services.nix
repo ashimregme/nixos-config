@@ -2,7 +2,7 @@
 
 {
   imports = [
-    ./gnome.nix
+    ./de.nix
     ./pipewire.nix
     ./xserver.nix
   ];
