@@ -21,6 +21,7 @@
     gnome.nautilus
     gnome.eog
     gnome.gnome-clocks
+    gnome.gnome-tweaks
   ];
 
   environment.gnome.excludePackages = with pkgs.gnome; [
