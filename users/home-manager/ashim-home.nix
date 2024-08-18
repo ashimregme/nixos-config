@@ -48,6 +48,7 @@
         gnupg
         gimp
         viber
+        calibre
       ];
 
       file."${config.home-manager.users.ashim.xdg.configHome}/autostart/protonvpn-app.desktop" = {
