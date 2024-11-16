@@ -32,6 +32,7 @@
 
   security.rtkit.enable = true;
   security.sudo.execWheelOnly = true;
+  boot.kernel.sysctl."kernel.unprivileged_userns_clone" = 1; #google-chrome not working (https://github.com/NixOS/nixpkgs/issues/97682)
 
   virtualisation.docker.enable = true;
   virtualisation.libvirtd.enable = true;

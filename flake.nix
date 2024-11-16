@@ -40,6 +40,7 @@
               allowUnfree = true;
               permittedInsecurePackages = [
                 "openssl-1.1.1w"
+                "qbittorrent-4.6.4"
               ];
             };
             overlays = [
