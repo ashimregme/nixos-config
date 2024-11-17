@@ -18,6 +18,12 @@
       fsType = "btrfs";
       options = [ "subvol=@" ];
     };
+  fileSystems."/nix" =
+    { device = "/dev/disk/by-label/nix";
+      fsType = "ext4";
+      neededForBoot = true;
+      options = [ "noatime" ];
+    };
 
   boot.initrd.luks.devices."luks-dc32d402-aa7b-4215-9d87-e6be0533e2e3".device = "/dev/disk/by-uuid/dc32d402-aa7b-4215-9d87-e6be0533e2e3";
 
