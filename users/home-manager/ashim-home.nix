@@ -1,15 +1,34 @@
 { config, pkgs, systemd, ... }:
 
-{
+let
+  androidComposition = pkgs.unstable.androidenv.composeAndroidPackages {
+    cmdLineToolsVersion = "8.0";
+    toolsVersion = "26.1.1";
+    platformToolsVersion = "35.0.2";
+    buildToolsVersions = [ "30.0.3" ];
+    platformVersions = [ "28" "29" "30" ];
+    cmakeVersions = [ "3.10.2" ];
+    includeEmulator = false;
+    includeSources = false;
+    includeSystemImages = false;
+    includeNDK = false;
+    useGoogleAPIs = false;
+    useGoogleTVAddOns = false;
+  };
+in {
   imports = [
   ];
   users.users.ashim = {
     isNormalUser = true;
     description = "Ashim Regmi";
-    extraGroups = [ "networkmanager" "wheel" "docker" "i2c" ];
+    extraGroups = [ "networkmanager" "wheel" "docker" "i2c" "adbusers" "kvm" ];
     initialPassword = "changeme";
     shell = pkgs.zsh;
   };
+  programs.adb.enable = true;
+  services.udev.packages = [
+    pkgs.android-udev-rules
+  ];
 
   home-manager.users.ashim = {
     imports = [
@@ -30,7 +49,6 @@
         protonvpn-gui
         shotwell
         libreoffice
-        jetbrains.idea-ultimate
         deja-dup
         gparted
         veracrypt
@@ -49,6 +67,15 @@
         gimp
         viber
         calibre
+        rsync
+
+        # development - start
+        unstable.jetbrains.idea-ultimate
+        unstable.android-tools
+        unstable.android-studio
+        androidComposition.androidsdk
+        unstable.flutter
+        # development - end
       ];
 
       file."${config.home-manager.users.ashim.xdg.configHome}/autostart/protonvpn-app.desktop" = {
@@ -77,6 +104,13 @@
         enable = true;
         userName = "Ashim Regmi";
         userEmail = "5734294+ashimregme@users.noreply.github.com";
+      };
+      zsh.sessionVariables = {
+        ANDROID_HOME = "${androidComposition.androidsdk}/libexec/android-sdk";
+      };
+      java = {
+        enable = true;
+        package = pkgs.temurin-bin-17;
       };
     };
   };

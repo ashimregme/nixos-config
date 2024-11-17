@@ -15,7 +15,13 @@
       system = "x86_64-linux";
       pkgs = nixpkgs.legacyPackages.${system};
       overlay-unstable = final: prev: {
-        unstable = nixpkgs-unstable.legacyPackages.${prev.system};
+        unstable = import nixpkgs-unstable {
+          system = prev.system;
+          config = {
+            allowUnfree = true;
+            android_sdk.accept_license = true;
+          };
+        };
       };
       overlay-gnome = final: prev: {
         gnome = prev.gnome.overrideScope (gnomeFinal: gnomePrev: {
