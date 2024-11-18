@@ -14,23 +14,14 @@
   boot.extraModulePackages = [ ];
 
   fileSystems."/" =
-    { device = "/dev/disk/by-uuid/50c9ec08-b1f3-4642-9304-d2b395626311";
-      fsType = "btrfs";
-      options = [ "subvol=@" ];
-    };
-  fileSystems."/nix" =
-    { device = "/dev/disk/by-label/nix";
+    { device = "/dev/disk/by-uuid/45862346-b598-430f-af18-99740adf57b2";
       fsType = "ext4";
-      neededForBoot = true;
-      options = [ "noatime" ];
     };
-
-  boot.initrd.luks.devices."luks-dc32d402-aa7b-4215-9d87-e6be0533e2e3".device = "/dev/disk/by-uuid/dc32d402-aa7b-4215-9d87-e6be0533e2e3";
 
   fileSystems."/boot" =
     { device = "/dev/disk/by-uuid/02AC-39E1";
       fsType = "vfat";
-      options = [ "fmask=0022" "dmask=0022" ];
+      options = [ "fmask=0077" "dmask=0077" ];
     };
 
   swapDevices = [ ];
@@ -40,7 +31,7 @@
   # still possible to use this option, but it's recommended to use it in conjunction
   # with explicit per-interface declarations with `networking.interfaces.<interface>.useDHCP`.
   networking.useDHCP = lib.mkDefault true;
-  # networking.interfaces.enp0s20f0u1u1u2.useDHCP = lib.mkDefault true;
+  # networking.interfaces.eth0.useDHCP = lib.mkDefault true;
   # networking.interfaces.wlp2s0.useDHCP = lib.mkDefault true;
 
   nixpkgs.hostPlatform = lib.mkDefault "x86_64-linux";
