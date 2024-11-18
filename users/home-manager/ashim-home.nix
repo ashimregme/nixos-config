@@ -1,12 +1,13 @@
 { config, pkgs, systemd, ... }:
 
 let
+  buildToolsVersion = "33.0.1";
   androidComposition = pkgs.unstable.androidenv.composeAndroidPackages {
     cmdLineToolsVersion = "8.0";
     toolsVersion = "26.1.1";
     platformToolsVersion = "35.0.2";
-    buildToolsVersions = [ "30.0.3" ];
-    platformVersions = [ "28" "29" "30" ];
+    buildToolsVersions = [ buildToolsVersion ];
+    platformVersions = [ "33" "34" ];
     cmakeVersions = [ "3.10.2" ];
     includeEmulator = false;
     includeSources = false;
@@ -14,6 +15,9 @@ let
     includeNDK = false;
     useGoogleAPIs = false;
     useGoogleTVAddOns = false;
+    extraLicenses = [
+     "android-sdk-license"
+    ];
   };
 in {
   imports = [
@@ -107,6 +111,7 @@ in {
       };
       zsh.sessionVariables = {
         ANDROID_HOME = "${androidComposition.androidsdk}/libexec/android-sdk";
+        GRADLE_OPTS = "-Dorg.gradle.project.android.aapt2FromMavenOverride=${androidComposition.androidsdk}/libexec/android-sdk/build-tools/${buildToolsVersion}/aapt2";
       };
       java = {
         enable = true;
