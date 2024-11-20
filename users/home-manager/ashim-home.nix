@@ -72,6 +72,7 @@ in {
         viber
         calibre
         rsync
+        bleachbit
 
         # development - start
         unstable.jetbrains.idea-ultimate
