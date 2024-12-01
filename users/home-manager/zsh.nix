@@ -10,8 +10,8 @@
 
     shellAliases = {
       ll = "ls -halt";
-      nixupd = "sudo nixos-rebuild --upgrade-all switch -I /home/ashim/nixos-config --flake /home/ashim/nixos-config#homestation";
-      nixreb = "sudo nix-channel --update; sudo nix flake update --flake /home/ashim/nixos-config#homestation; sudo nixos-rebuild switch -I /home/ashim/nixos-config --flake /home/ashim/nixos-config#homestation";
+      nixupd = "sudo nix-channel --update; sudo nix flake update --flake /home/ashim/nixos-config; nixreb";
+      nixreb = "sudo nixos-rebuild switch -I /home/ashim/nixos-config --flake /home/ashim/nixos-config#homestation";
       nixcog = "sudo nix-collect-garbage --delete-older-than 14d";
       nixopt = "sudo nix-store --optimise";
       nixrepl = "nix repl -f '<nixpkgs>'";
