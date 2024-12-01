@@ -84,7 +84,7 @@ in {
       ];
 
       file."${config.home-manager.users.ashim.xdg.configHome}/autostart/protonvpn-app.desktop" = {
-        enable = true;
+        enable = false;
         source = "${pkgs.protonvpn-gui}/share/applications/protonvpn-app.desktop";
       };
 
@@ -94,7 +94,7 @@ in {
       };
 
       file."${config.home-manager.users.ashim.xdg.configHome}/autostart/firefox.desktop" = {
-        enable = true;
+        enable = false;
         source = "${pkgs.firefox}/share/applications/firefox.desktop";
       };
     };
