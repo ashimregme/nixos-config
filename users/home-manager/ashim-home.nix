@@ -1,7 +1,7 @@
 { config, pkgs, systemd, ... }:
 
 let
-  buildToolsVersion = "33.0.1";
+  buildToolsVersion = "34.0.0";
   androidComposition = pkgs.unstable.androidenv.composeAndroidPackages {
     cmdLineToolsVersion = "8.0";
     toolsVersion = "26.1.1";
