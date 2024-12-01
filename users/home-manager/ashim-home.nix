@@ -118,6 +118,10 @@ in {
         enable = true;
         package = pkgs.temurin-bin-17;
       };
+      gnome-shell = {
+        enable = true;
+        extensions = [{ package = pkgs.gnomeExtensions.gsconnect; }];
+      };
     };
   };
 }

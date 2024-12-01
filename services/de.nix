@@ -14,7 +14,6 @@
 
   environment.systemPackages = with pkgs; [
     gnomeExtensions.appindicator
-    gnomeExtensions.gsconnect
     gnome-calculator
     gnome-system-monitor
     gnome-disk-utility
