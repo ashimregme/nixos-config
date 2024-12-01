@@ -24,6 +24,7 @@
           system-monitor.extensionUuid
         ];
         favorite-apps = [
+          "org.gnome.Nautilus.desktop"
           "firefox.desktop"
           "google-chrome.desktop"
           "protonvpn-app.desktop"
