@@ -23,6 +23,20 @@
           workspace-indicator.extensionUuid
           system-monitor.extensionUuid
         ];
+        favorite-apps = [
+          "firefox.desktop"
+          "google-chrome.desktop"
+          "protonvpn-app.desktop"
+          "thunderbird.desktop"
+          "viber.desktop"
+          "veracrypt.desktop"
+          "org.gnome.DejaDup.desktop"
+          "sublime_text.desktop"
+          "idea-ultimate.desktop"
+          "android-studio.desktop"
+          "gimp.desktop"
+          "org.qbittorrent.qBittorrent.desktop"
+        ];
       };
       "org/gnome/desktop/interface" = {
         clock-format = "24h";
