@@ -73,6 +73,7 @@ in {
         calibre
         rsync
         bleachbit
+        copyq
 
         # development - start
         unstable.jetbrains.idea-ultimate
@@ -96,6 +97,11 @@ in {
       file."${config.home-manager.users.ashim.xdg.configHome}/autostart/firefox.desktop" = {
         enable = false;
         source = "${pkgs.firefox}/share/applications/firefox.desktop";
+      };
+
+      file."${config.home-manager.users.ashim.xdg.configHome}/autostart/com.github.hluk.copyq.desktop" = {
+        enable = true;
+        source = "${pkgs.copyq}/share/applications/com.github.hluk.copyq.desktop";
       };
     };
 
