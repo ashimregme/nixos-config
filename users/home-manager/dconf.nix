@@ -35,6 +35,7 @@
           "sublime_text.desktop"
           "idea-ultimate.desktop"
           "android-studio.desktop"
+          "terminator.desktop"
           "gimp.desktop"
           "org.qbittorrent.qBittorrent.desktop"
         ];
