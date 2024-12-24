@@ -14,6 +14,7 @@
 
   environment.systemPackages = with pkgs; [
     gnomeExtensions.appindicator
+    gnomeExtensions.control-monitor-brightness-and-volume-with-ddcutil
     gnome-calculator
     gnome-system-monitor
     gnome-disk-utility
