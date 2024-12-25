@@ -18,6 +18,7 @@
       "org/gnome/shell" = {
         disable-user-extensions = false;
         enabled-extensions = with pkgs.gnomeExtensions; [
+          control-monitor-brightness-and-volume-with-ddcutil.extensionUuid
           gsconnect.extensionUuid
           appindicator.extensionUuid
           workspace-indicator.extensionUuid
