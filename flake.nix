@@ -20,6 +20,9 @@
           config = {
             allowUnfree = true;
             android_sdk.accept_license = true;
+              permittedInsecurePackages = [
+                "openssl-1.1.1w"
+              ];
           };
         };
       };

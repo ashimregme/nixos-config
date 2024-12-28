@@ -48,12 +48,16 @@ in {
       homeDirectory = "/home/ashim";
 
       packages = with pkgs; [
-        qbittorrent
-        sublime4
-        protonvpn-gui
-        shotwell
-        libreoffice
-        deja-dup
+        unstable.qbittorrent
+        unstable.sublime4
+        unstable.protonvpn-gui
+        unstable.shotwell
+        unstable.libreoffice
+        unstable.vlc
+        unstable.google-chrome
+        unstable.gimp
+        unstable.viber
+        unstable.deja-dup
         gparted
         veracrypt
         ventoy-full
@@ -64,12 +68,8 @@ in {
         ddcutil #brightness control
         lsof
         dig
-        vlc
-        google-chrome
         wget
         gnupg
-        gimp
-        viber
         calibre
         rsync
         bleachbit
