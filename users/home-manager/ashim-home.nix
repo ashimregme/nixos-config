@@ -22,10 +22,11 @@ let
 in {
   imports = [
   ];
+  users.groups.libvirtd.members = ["ashim"];
   users.users.ashim = {
     isNormalUser = true;
     description = "Ashim Regmi";
-    extraGroups = [ "networkmanager" "wheel" "docker" "i2c" "adbusers" "kvm" ];
+    extraGroups = [ "networkmanager" "wheel" "docker" "i2c" "adbusers" "libvirtd" "kvm" "qemu-libvirtd" ];
     # Generated using mkpasswd
     hashedPassword = "$6$p4bLCfzviuVdPdJQ$JHovVk/cj9VbKN3J5hsRde2Gc5U.snCDWsvhA0K3hYiFWgo1A.S8jWr08UT29VPDN5U5dT7..KlvcGIit4KYG/";
     shell = pkgs.zsh;
@@ -47,6 +48,11 @@ in {
       stateVersion = "24.05";
       username = "ashim";
       homeDirectory = "/home/ashim";
+
+      sessionVariables = {
+        ANDROID_HOME = "${androidComposition.androidsdk}/libexec/android-sdk";
+        GRADLE_OPTS = "-Dorg.gradle.project.android.aapt2FromMavenOverride=${androidComposition.androidsdk}/libexec/android-sdk/build-tools/${buildToolsVersion}/aapt2";
+      };
 
       packages = with pkgs; [
         unstable.qbittorrent
@@ -75,6 +81,9 @@ in {
         rsync
         bleachbit
         copyq
+
+        #TPM emulator for libvirt (to bypass Windows check for TPM)
+        swtpm
 
         # development - start
         unstable.jetbrains.idea-ultimate
@@ -108,6 +117,7 @@ in {
 
     programs = {
       home-manager.enable = true; # Let Home Manager install and manage itself.
+      zsh.enable = true;
       thunderbird = {
         enable = true;
         profiles = { };
@@ -117,10 +127,6 @@ in {
         userName = "Ashim Regmi";
         userEmail = "5734294+ashimregme@users.noreply.github.com";
       };
-      zsh.sessionVariables = {
-        ANDROID_HOME = "${androidComposition.androidsdk}/libexec/android-sdk";
-        GRADLE_OPTS = "-Dorg.gradle.project.android.aapt2FromMavenOverride=${androidComposition.androidsdk}/libexec/android-sdk/build-tools/${buildToolsVersion}/aapt2";
-      };
       java = {
         enable = true;
         package = pkgs.temurin-bin-17;
@@ -129,6 +135,7 @@ in {
         enable = true;
         extensions = [{ package = pkgs.gnomeExtensions.gsconnect; }];
       };
+      fzf.enableBashIntegration = true;
     };
   };
 }

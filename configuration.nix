@@ -34,6 +34,20 @@
   security.sudo.execWheelOnly = true;
   boot.kernel.sysctl."kernel.unprivileged_userns_clone" = 1; #google-chrome not working (https://github.com/NixOS/nixpkgs/issues/97682)
 
-  virtualisation.docker.enable = true;
-  virtualisation.libvirtd.enable = true;
+  environment.sessionVariables.LIBVIRT_DEFAULT_URI = [ "qemu:///system" ];
+  virtualisation = {
+    docker.enable = true;
+    libvirtd = {
+      enable = true;
+      qemu = {
+        ovmf = {
+          enable = true;
+          packages = [
+            pkgs.OVMFFull
+          ];
+        };
+        swtpm.enable = true;
+      };
+    };
+  };
 }
