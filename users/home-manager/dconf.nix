@@ -60,7 +60,7 @@
         font-antialiasing = "grayscale";
         font-hinting = "slight";
         gtk-im-module = "gtk-im-context-simple";
-        locate-pointer = true;
+        locate-pointer = false;
         show-battery-percentage = true;
         toolkit-accessibility = false;
       };
