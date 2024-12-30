@@ -81,9 +81,6 @@ in {
         bleachbit
         copyq
 
-        #TPM emulator for libvirt (to bypass Windows check for TPM)
-        swtpm
-
         # development - start
         unstable.jetbrains.idea-ultimate
         unstable.android-tools
