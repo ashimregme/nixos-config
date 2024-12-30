@@ -133,4 +133,17 @@ in {
       fzf.enableBashIntegration = true;
     };
   };
+  
+  # set profile picture
+  system.activationScripts.script.text = ''
+    mkdir -p /var/lib/AccountsService/{icons,users}
+    cp /home/ashim/Pictures/profile-pic.jpg /var/lib/AccountsService/icons/ashim
+    echo -e "[User]\nIcon=/var/lib/AccountsService/icons/ashim\n" > /var/lib/AccountsService/users/ashim
+
+    chown root:root /var/lib/AccountsService/users/ashim
+    chmod 0600 /var/lib/AccountsService/users/ashim
+
+    chown root:root /var/lib/AccountsService/icons/ashim
+    chmod 0444 /var/lib/AccountsService/icons/ashim
+  '';
 }
