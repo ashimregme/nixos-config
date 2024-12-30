@@ -24,6 +24,7 @@
           workspace-indicator.extensionUuid
           system-monitor.extensionUuid
           open-bar.extensionUuid
+          hibernate-status-button.extensionUuid
         ];
         favorite-apps = [
           "org.gnome.Nautilus.desktop"

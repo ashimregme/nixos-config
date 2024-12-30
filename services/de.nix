@@ -16,6 +16,7 @@
     gnomeExtensions.appindicator
     gnomeExtensions.control-monitor-brightness-and-volume-with-ddcutil
     gnomeExtensions.open-bar
+    gnomeExtensions.hibernate-status-button
     gnome-calculator
     gnome-system-monitor
     gnome-disk-utility

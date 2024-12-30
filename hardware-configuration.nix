@@ -26,7 +26,17 @@
       options = [ "fmask=0077" "dmask=0077" ];
     };
 
-  swapDevices = [ ];
+  # Hibernation - Start
+  boot.kernelParams = ["resume_offset=1681408"]; # sudo filefrag -v /var/lib/swapfile | head
+  boot.resumeDevice = "/dev/disk/by-uuid/24d4fc9a-29ea-4f3d-8981-c756e966d26b"; # lsblk -f (root UUID)
+  powerManagement.enable = true;
+  swapDevices = [
+    {
+      device = "/var/lib/swapfile";
+      size = 36 * 1024; # 36GB in MB
+    }
+  ];
+  # Hibernation - End
 
   # Enables DHCP on each ethernet and wireless interface. In case of scripted networking
   # (the default) this is the recommended approach. When using systemd-networkd it's
