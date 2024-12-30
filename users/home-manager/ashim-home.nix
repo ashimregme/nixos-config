@@ -59,7 +59,7 @@ in {
         unstable.sublime4
         unstable.protonvpn-gui
         unstable.shotwell
-        unstable.libreoffice
+        unstable.libreoffice-fresh
         unstable.vlc
         unstable.google-chrome
         unstable.gimp
