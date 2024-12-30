@@ -77,7 +77,6 @@ in {
         dig
         wget
         gnupg
-        calibre
         rsync
         bleachbit
         copyq
