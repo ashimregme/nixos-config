@@ -79,7 +79,6 @@ in {
         gnupg
         rsync
         bleachbit
-        copyq
 
         # development - start
         unstable.jetbrains.idea-ultimate
