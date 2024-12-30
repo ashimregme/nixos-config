@@ -65,6 +65,7 @@ in {
         unstable.gimp
         unstable.viber
         unstable.deja-dup
+        unstable.gapless
         gparted
         veracrypt
         ventoy-full
