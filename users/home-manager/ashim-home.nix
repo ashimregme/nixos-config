@@ -90,7 +90,7 @@ in {
       ];
 
       file."${config.home-manager.users.ashim.xdg.configHome}/autostart/protonvpn-app.desktop" = {
-        enable = false;
+        enable = true;
         source = "${pkgs.protonvpn-gui}/share/applications/protonvpn-app.desktop";
       };
 
