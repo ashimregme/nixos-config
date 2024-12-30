@@ -12,7 +12,7 @@
       ll = "ls -halt";
       nixupd = "sudo nix-channel --update; sudo nix flake update --flake /home/ashim/nixos-config; nixreb";
       nixreb = "sudo nixos-rebuild switch -I /home/ashim/nixos-config --flake /home/ashim/nixos-config#homestation";
-      nixcog = "sudo nix-collect-garbage --delete-older-than 30d";
+      nixcog = "sudo nix-collect-garbage -d; nix-collect-garbage -d; nixreb; sudo nix-collect-garbage -d; nix-collect-garbage -d; nixopt";
       nixopt = "sudo nix-store --optimise";
       nixrepl = "nix repl -f '<nixpkgs>'";
       traceroute = "() { nix-shell -p traceroute --command \"traceroute $1\" --pure ;}";
