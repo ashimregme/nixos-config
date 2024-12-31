@@ -28,7 +28,7 @@
         favorite-apps = [
           "org.gnome.Nautilus.desktop"
           "firefox.desktop"
-          "google-chrome.desktop"
+          "chromium-browser.desktop"
           "protonvpn-app.desktop"
           "thunderbird.desktop"
           "viber.desktop"

@@ -61,7 +61,7 @@ in {
         unstable.shotwell
         unstable.libreoffice-fresh
         unstable.vlc
-        unstable.google-chrome
+        unstable.ungoogled-chromium
         unstable.gimp
         unstable.viber
         unstable.deja-dup
