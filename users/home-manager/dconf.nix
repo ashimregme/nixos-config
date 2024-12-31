@@ -21,7 +21,6 @@
           control-monitor-brightness-and-volume-with-ddcutil.extensionUuid
           gsconnect.extensionUuid
           appindicator.extensionUuid
-          workspace-indicator.extensionUuid
           system-monitor.extensionUuid
           open-bar.extensionUuid
           hibernate-status-button.extensionUuid
@@ -57,7 +56,7 @@
       "org/gnome/desktop/interface" = {
         clock-show-weekday = true;
         enable-animations = true;
-        enable-hot-corners = true;
+        enable-hot-corners = false;
         font-antialiasing = "grayscale";
         font-hinting = "slight";
         gtk-im-module = "gtk-im-context-simple";
@@ -171,7 +170,7 @@
         fgalpha=1.0;
         fgcolor=["1.0" "1.0" "1.0"];
         hcolor=["0" "0.7" "0.9"];
-        height=28.0;
+        height=36.0;
         hscd-color=["0.251" "0.745" "0.510"];
         import-export=true;
         isalpha=0.94999999999999996;
@@ -204,7 +203,7 @@
         light-smbgcolor=["0.729" "0.780" "0.808"];
         light-vw-color=["0.251" "0.745" "0.510"];
         light-winbcolor=["0.251" "0.745" "0.510"];
-        margin=3.0;
+        margin=4.0;
         mbcolor=["0.016" "0.078" "0.141"];
         mbgcolor=["0.902" "0.925" "0.922"];
         mfgalpha=1.0;
