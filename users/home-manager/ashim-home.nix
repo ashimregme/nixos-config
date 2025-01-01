@@ -108,7 +108,7 @@ in {
 
       file."${config.home-manager.users.ashim.xdg.configHome}/autostart/guake.desktop" = {
         enable = true;
-        source = "${pkgs.firefox}/share/applications/guake.desktop";
+        source = "${pkgs.guake}/share/applications/guake.desktop";
       };
     };
 
