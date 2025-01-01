@@ -2,7 +2,7 @@
 
 {
   programs.terminator = {
-    enable = true;
+    enable = false;
     config = {
       global_config = {
         "window_state" = "maximise";

@@ -12,8 +12,13 @@
       };
       "org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom0" = {
         binding = "<Ctrl><Alt>t";
-        command = "terminator";
+        command = "guake";
         name = "open terminal";
+      };
+      "org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom1" = {
+        binding = "F12";
+        command = "guake-toggle";
+        name = "toggle guake terminal";
       };
       "org/gnome/shell" = {
         disable-user-extensions = false;
@@ -37,7 +42,7 @@
           "sublime_text.desktop"
           "idea-ultimate.desktop"
           "android-studio.desktop"
-          "terminator.desktop"
+          "guake.desktop"
           "gimp.desktop"
           "org.qbittorrent.qBittorrent.desktop"
         ];

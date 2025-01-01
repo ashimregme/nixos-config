@@ -80,6 +80,7 @@ in {
         gnupg
         rsync
         bleachbit
+        guake
 
         # development - start
         unstable.jetbrains.idea-ultimate
@@ -103,6 +104,11 @@ in {
       file."${config.home-manager.users.ashim.xdg.configHome}/autostart/firefox.desktop" = {
         enable = false;
         source = "${pkgs.firefox}/share/applications/firefox.desktop";
+      };
+
+      file."${config.home-manager.users.ashim.xdg.configHome}/autostart/guake.desktop" = {
+        enable = true;
+        source = "${pkgs.firefox}/share/applications/guake.desktop";
       };
     };
 
