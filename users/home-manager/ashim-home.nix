@@ -65,6 +65,8 @@ in {
         unstable.gimp
         unstable.viber
         unstable.gapless
+        unstable.spotify
+        unstable.spotify-tray
         deja-dup
         gparted
         veracrypt
