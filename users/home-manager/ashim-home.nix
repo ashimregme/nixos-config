@@ -103,13 +103,18 @@ in {
       };
 
       file."${config.home-manager.users.ashim.xdg.configHome}/autostart/firefox.desktop" = {
-        enable = false;
+        enable = true;
         source = "${pkgs.firefox}/share/applications/firefox.desktop";
       };
 
       file."${config.home-manager.users.ashim.xdg.configHome}/autostart/guake.desktop" = {
         enable = true;
         source = "${pkgs.guake}/share/applications/guake.desktop";
+      };
+
+      file."${config.home-manager.users.ashim.xdg.configHome}/autostart/idea-ultimate.desktop" = {
+        enable = true;
+        source = "${pkgs.guake}/share/applications/idea-ultimate.desktop";
       };
     };
 
