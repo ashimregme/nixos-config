@@ -29,6 +29,8 @@
           system-monitor.extensionUuid
           open-bar.extensionUuid
           hibernate-status-button.extensionUuid
+          just-perfection.extensionUuid
+          auto-move-windows.extensionUuid
         ];
         favorite-apps = [
           "org.gnome.Nautilus.desktop"
@@ -107,6 +109,10 @@
       "org/virt-manager/virt-manager/connections" = {
         autoconnect = ["qemu:///system"];
         uris = ["qemu:///system"];
+      };
+
+      "org/gnome/shell/extensions/auto-move-windows" = {
+
       };
 
       "org/gnome/shell/extensions/open-bar" = {

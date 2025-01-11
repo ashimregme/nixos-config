@@ -17,6 +17,8 @@
     gnomeExtensions.control-monitor-brightness-and-volume-with-ddcutil
     gnomeExtensions.open-bar
     gnomeExtensions.hibernate-status-button
+    gnomeExtensions.just-perfection
+    gnomeExtensions.auto-move-windows
     gnome-calculator
     gnome-system-monitor
     gnome-disk-utility
