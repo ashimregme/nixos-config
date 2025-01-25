@@ -7,6 +7,8 @@
     networkmanager.enable = true; # Enable networking
     firewall = {
       enable = true;
+      allowedTCPPorts = [ 8096 8920 ];
+      allowedUDPPorts = [ 1900 7359 ];
       allowedTCPPortRanges = [
         { from = 1714; to = 1764; } # GSConnect ports
       ];

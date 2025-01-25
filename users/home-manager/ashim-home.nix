@@ -82,6 +82,8 @@ in {
         rsync
         bleachbit
         guake
+        jellyfin
+        jellyfin-web
 
         # development - start
         unstable.jetbrains.idea-ultimate
