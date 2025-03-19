@@ -62,6 +62,7 @@ in {
         unstable.libreoffice-fresh
         unstable.vlc
         unstable.ungoogled-chromium
+        unstable.google-chrome
         unstable.gimp
         unstable.viber
         unstable.gapless
@@ -91,6 +92,7 @@ in {
         unstable.android-studio
         androidComposition.androidsdk
         unstable.flutter
+        unstable.watchman
         # development - end
       ];
 
