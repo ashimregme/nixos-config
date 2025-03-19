@@ -67,6 +67,7 @@ in {
         unstable.viber
         unstable.gapless
         unstable.spotify
+        unstable.lmstudio
         deja-dup
         gparted
         veracrypt
