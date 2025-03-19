@@ -89,11 +89,6 @@ in {
 
         # development - start
         unstable.jetbrains.idea-ultimate
-        unstable.android-tools
-        unstable.android-studio
-        androidComposition.androidsdk
-        unstable.flutter
-        unstable.watchman
         # development - end
       ];
 
