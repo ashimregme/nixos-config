@@ -18,7 +18,6 @@
       ./security.nix
       ./systemd.nix
       ./system.nix
-      ./wayland.nix
       ./virtualization.nix
       ./users.nix
     ];

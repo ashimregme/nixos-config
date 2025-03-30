@@ -9,7 +9,5 @@
     ./packages.nix                    # user packages not available in NixOS by default
     ./autostart.nix
     ./programs.nix                    # user programs available in NixOS by default
-    ./hyprland                        # window manager
-    ./waybar                          # status bar
   ];
 }

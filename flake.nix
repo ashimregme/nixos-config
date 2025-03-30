@@ -8,16 +8,6 @@
       url = "github:nix-community/home-manager/release-24.11";
       inputs.nixpkgs.follows = "nixpkgs";
     };
-
-    hypr-contrib.url = "github:hyprwm/contrib";
-    hyprland.url = "github:hyprwm/Hyprland";
-    hyprland-plugins = {
-      url = "github:hyprwm/hyprland-plugins";
-      inputs.hyprland.follows = "hyprland";
-    };
-    hyprpicker.url = "github:hyprwm/hyprpicker";
-
-    alejandra.url = "github:kamadorueda/alejandra/3.0.0";
   };
 
   outputs = { self, nixpkgs, nixpkgs-unstable, ... } @inputs:
@@ -55,7 +45,7 @@
         homestation = nixpkgs.lib.nixosSystem {
           specialArgs = {
             host = "homestation";
-            inherit inputs username;
+            inherit self inputs username;
             pkgs = import nixpkgs {
               system = "x86_64-linux";
               config = {
@@ -70,11 +60,11 @@
                 overlay-unstable
                 overlay-gnome
               ];
+              lib = nixpkgs.lib;
             };
           };
           modules = [
             ./hosts/homestation
-            inputs.home-manager.nixosModules.default
           ];
         };
       };

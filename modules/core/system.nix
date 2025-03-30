@@ -16,5 +16,8 @@
 
   documentation.nixos.enable = false;
 
-  environment.defaultPackages = lib.mkForce [];
+  environment.defaultPackages = with pkgs; [
+    git
+    wget
+  ];
 }

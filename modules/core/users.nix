@@ -19,6 +19,7 @@
         homeDirectory = "/home/${username}";
         stateVersion = "24.05";
       };
+      programs.home-manager.enable = true; # Let Home Manager install and manage itself.
     };
     backupFileExtension = "backup";
   };

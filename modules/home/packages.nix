@@ -10,12 +10,12 @@
     unstable.vlc
     unstable.ungoogled-chromium
     unstable.google-chrome
-    unstable.gimp
-    unstable.viber
-    unstable.gapless
+    unstable.gimp                                                     # Photo editor
+    unstable.viber                                                    # Chat
+    unstable.gapless                                                  # Music player
     unstable.spotify
-    unstable.lmstudio
-    deja-dup
+    unstable.lmstudio                                                 # LLM
+    deja-dup                                                          # Backup
     gparted
     veracrypt
     ventoy-full
@@ -26,7 +26,6 @@
     ddcutil #brightness control
     lsof
     dig
-    wget
     gnupg
     rsync
     bleachbit
