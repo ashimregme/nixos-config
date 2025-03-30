@@ -8,15 +8,11 @@
       url = "github:nix-community/home-manager/release-24.11";
       inputs.nixpkgs.follows = "nixpkgs";
     };
-    hyprland.url = "github:hyprwm/Hyprland";
-    hyprland-plugins = {
-      url = "github:hyprwm/hyprland-plugins";
-      inputs.hyprland.follows = "hyprland";
-    };
   };
 
   outputs = { self, nixpkgs, nixpkgs-unstable, ... } @inputs:
     let
+      username = "ashim";
       system = "x86_64-linux";
       pkgs = nixpkgs.legacyPackages.${system};
       overlay-unstable = final: prev: {
@@ -45,29 +41,32 @@
         });
       };
     in {
-      nixosConfigurations.homestation = nixpkgs.lib.nixosSystem {
-        specialArgs = {
-          inherit inputs;
-          pkgs = import nixpkgs {
-            system = "x86_64-linux";
-            config = {
-              allowUnfree = true;
-              android_sdk.accept_license = true;
-              permittedInsecurePackages = [
-                "openssl-1.1.1w"
-                "qbittorrent-4.6.4"
+      nixosConfigurations = {
+        homestation = nixpkgs.lib.nixosSystem {
+          specialArgs = {
+            host = "homestation";
+            inherit self inputs username;
+            pkgs = import nixpkgs {
+              system = "x86_64-linux";
+              config = {
+                allowUnfree = true;
+                android_sdk.accept_license = true;
+                permittedInsecurePackages = [
+                  "openssl-1.1.1w"
+                  "qbittorrent-4.6.4"
+                ];
+              };
+              overlays = [
+                overlay-unstable
+                overlay-gnome
               ];
+              lib = nixpkgs.lib;
             };
-            overlays = [
-              overlay-unstable
-              overlay-gnome
-            ];
           };
+          modules = [
+            ./hosts/homestation
+          ];
         };
-        modules = [
-          ./configuration.nix
-          inputs.home-manager.nixosModules.default
-        ];
       };
     };
 }
