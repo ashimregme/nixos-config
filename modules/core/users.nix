@@ -41,6 +41,9 @@
       # Generated using mkpasswd
       hashedPassword = "$6$p4bLCfzviuVdPdJQ$JHovVk/cj9VbKN3J5hsRde2Gc5U.snCDWsvhA0K3hYiFWgo1A.S8jWr08UT29VPDN5U5dT7..KlvcGIit4KYG/";
       shell = pkgs.zsh;
+      openssh.authorizedKeys.keys = [
+        "ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIBGRJuGV74kt+oFdir+rNoy/cnJx640DIkFc47C+sfRR ashim@workstation"
+      ];
     };
     groups.libvirtd.members = ["${username}"];
   };
