@@ -1,10 +1,10 @@
 { config, pkgs, inputs, username, ... }:
 
 {
-  xdg.configFile."autostart/protonvpn-app.desktop" = {
-    enable = true;
-    source = "${pkgs.protonvpn-gui}/share/applications/protonvpn-app.desktop";
-  };
+#  xdg.configFile."autostart/protonvpn-app.desktop" = {
+#    enable = true;
+#    source = "${pkgs.protonvpn-gui}/share/applications/protonvpn-app.desktop";
+#  };
 
   xdg.configFile."autostart/thunderbird.desktop" = {
     enable = true;

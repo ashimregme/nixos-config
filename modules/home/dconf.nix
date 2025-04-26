@@ -37,7 +37,7 @@
           "org.gnome.Nautilus.desktop"
           "firefox.desktop"
           "chromium-browser.desktop"
-          "protonvpn-app.desktop"
+#          "protonvpn-app.desktop"
           "thunderbird.desktop"
           "viber.desktop"
           "veracrypt.desktop"

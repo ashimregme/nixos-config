@@ -4,7 +4,7 @@
   home.packages = with pkgs; [
     unstable.qbittorrent
     unstable.sublime4
-    unstable.protonvpn-gui
+#    unstable.protonvpn-gui
     unstable.shotwell
     unstable.libreoffice-fresh
     unstable.vlc
