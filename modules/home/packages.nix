@@ -14,7 +14,6 @@
     unstable.viber                                                    # Chat
     unstable.gapless                                                  # Music player
     unstable.spotify
-    unstable.lmstudio                                                 # LLM
     deja-dup                                                          # Backup
     gparted
     veracrypt
