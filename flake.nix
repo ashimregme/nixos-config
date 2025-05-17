@@ -20,7 +20,6 @@
           system = prev.system;
           config = {
             allowUnfree = true;
-            android_sdk.accept_license = true;
               permittedInsecurePackages = [
                 "openssl-1.1.1w"
               ];
@@ -50,7 +49,6 @@
               system = "x86_64-linux";
               config = {
                 allowUnfree = true;
-                android_sdk.accept_license = true;
                 permittedInsecurePackages = [
                   "openssl-1.1.1w"
                   "qbittorrent-4.6.4"

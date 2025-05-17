@@ -44,7 +44,6 @@
           "org.gnome.DejaDup.desktop"
           "sublime_text.desktop"
           "idea-ultimate.desktop"
-          "android-studio.desktop"
           "guake.desktop"
           "gimp.desktop"
           "org.qbittorrent.qBittorrent.desktop"
