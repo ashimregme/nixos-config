@@ -28,10 +28,10 @@
   boot.resumeDevice = "/dev/disk/by-uuid/24d4fc9a-29ea-4f3d-8981-c756e966d26b"; # lsblk -f (root UUID)
   powerManagement.enable = true;
   swapDevices = [
-    {
-      device = "/var/lib/swapfile";
-      size = 36 * 1024; # 36GB in MB
-    }
+#    {
+#      device = "/var/lib/swapfile";
+#      size = 36 * 1024; # 36GB in MB
+#    }
   ];
   # Hibernation - End
 
