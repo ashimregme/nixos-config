@@ -34,6 +34,7 @@
 
     # development - start
     unstable.jetbrains.idea-ultimate
+    unstable.postman
     # development - end
   ];
 }
