@@ -16,5 +16,6 @@
     openssh.enable = true; # Enable the OpenSSH daemon.
     logrotate.checkConfig = false; # temporary solution (https://discourse.nixos.org/t/logrotate-config-fails-due-to-missing-group-30000/28501)
     tailscale.enable = false;
+    pulseaudio.enable = false;
   };
 }

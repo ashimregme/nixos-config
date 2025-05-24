@@ -3,7 +3,7 @@
 {
   services = {
     gnome = {
-      core-utilities.enable = false;
+      core-apps.enable = false;
       localsearch.enable = false;
       tinysparql.enable = false;
       gnome-browser-connector.enable = true;

@@ -7,8 +7,8 @@
       name = "default";
       isDefault = true;
       settings = {
-        "browser.search.defaultenginename" = "DuckDuckGo";
-        "browser.search.order.1" = "DuckDuckGo";
+        "browser.search.defaultenginename" = "ddg";
+        "browser.search.order.1" = "ddg";
 
         "signon.rememberSignons" = false;
         "widget.use-xdg-desktop-portal.file-picker" = 1;
@@ -22,8 +22,8 @@
       };
       search = {
         force = true;
-        default = "DuckDuckGo";
-        order = [ "DuckDuckGo" "Google" ];
+        default = "ddg";
+        order = [ "ddg" "google" ];
       };
     };
   };
