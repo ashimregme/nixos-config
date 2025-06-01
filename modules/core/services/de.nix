@@ -13,7 +13,6 @@
   environment.systemPackages = with pkgs; [
     gnomeExtensions.appindicator
     gnomeExtensions.control-monitor-brightness-and-volume-with-ddcutil
-    gnomeExtensions.open-bar
     gnomeExtensions.hibernate-status-button
     gnomeExtensions.just-perfection
     gnomeExtensions.auto-move-windows
