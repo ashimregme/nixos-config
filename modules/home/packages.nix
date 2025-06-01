@@ -34,6 +34,7 @@
 
     # development - start
     unstable.jetbrains.idea-ultimate
+    unstable.vscode
     unstable.postman
     # development - end
   ];
