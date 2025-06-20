@@ -26,7 +26,6 @@
           control-monitor-brightness-and-volume-with-ddcutil.extensionUuid
           gsconnect.extensionUuid
           appindicator.extensionUuid
-          system-monitor.extensionUuid
           hibernate-status-button.extensionUuid
           just-perfection.extensionUuid
           auto-move-windows.extensionUuid

@@ -4,7 +4,6 @@
   home.packages = with pkgs; [
     unstable.qbittorrent
     unstable.sublime4
-#    unstable.protonvpn-gui
     unstable.shotwell
     unstable.libreoffice-fresh
     unstable.vlc
@@ -31,11 +30,13 @@
     guake
     jellyfin
     jellyfin-web
+    mission-center
 
     # development - start
     unstable.jetbrains.idea-ultimate
     unstable.vscode
     unstable.postman
+    unstable.lmstudio
     # development - end
   ];
 }

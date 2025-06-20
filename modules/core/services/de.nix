@@ -18,7 +18,6 @@
     gnomeExtensions.auto-move-windows
     gnomeExtensions.battery-health-charging
     gnome-calculator
-    gnome-system-monitor
     gnome-disk-utility
     nautilus
     eog
