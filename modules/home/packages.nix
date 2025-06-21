@@ -37,6 +37,7 @@
     unstable.vscode
     unstable.postman
     unstable.lmstudio
+    unstable.code-cursor
     # development - end
   ];
 }
