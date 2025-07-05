@@ -38,6 +38,7 @@
     unstable.postman
     unstable.lmstudio
     unstable.code-cursor
+    unstable.warp-terminal
     # development - end
   ];
 }
