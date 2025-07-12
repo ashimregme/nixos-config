@@ -31,6 +31,8 @@
     jellyfin
     jellyfin-web
     mission-center
+    tailscale
+    tailscale-systray
 
     # development - start
     unstable.jetbrains.idea-ultimate
