@@ -6,12 +6,19 @@
 #    wireless.enable = false;  # Enables wireless support via wpa_supplicant.
     networkmanager.enable = true; # Enable networking
     firewall = {
-      enable = true;
-      allowedTCPPorts = [ 8096 8920 4200 8080];
+      enable = false;
+      allowedTCPPorts = [
+        8096
+        8920
+        4200
+        8080
+        1716
+      ];
       allowedUDPPorts = [
         1900
         7359
         41641 #tailscale
+        1716
       ];
       allowedTCPPortRanges = [
         { from = 1714; to = 1764; } # GSConnect ports
