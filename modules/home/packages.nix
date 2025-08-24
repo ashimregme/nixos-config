@@ -41,6 +41,7 @@
     unstable.lmstudio
     unstable.code-cursor
     unstable.warp-terminal
+    unstable.filezilla
     # development - end
   ];
 }
