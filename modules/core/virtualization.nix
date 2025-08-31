@@ -7,7 +7,10 @@
 {
   environment.sessionVariables.LIBVIRT_DEFAULT_URI = [ "qemu:///system" ];
   virtualisation = {
-    docker.enable = true;
+    docker = {
+      enable = true;
+      extraPackages = [ pkgs.docker-buildx ];
+    };
     libvirtd = {
       enable = true;
       qemu = {
