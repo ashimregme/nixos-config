@@ -41,6 +41,7 @@
     unstable.lmstudio
     unstable.warp-terminal
     unstable.filezilla
+    unstable.protonvpn-gui
     # development - end
   ];
 }
