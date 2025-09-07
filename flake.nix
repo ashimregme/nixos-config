@@ -56,6 +56,11 @@
               };
               overlays = [
                 overlay-unstable
+                (final: prev: {
+                  tailscale = prev.tailscale.overrideAttrs (old: {
+                    doCheck = false;
+                  });
+                })
               ];
               lib = nixpkgs.lib;
             };
