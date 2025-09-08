@@ -10,7 +10,6 @@
     unstable.ungoogled-chromium
     unstable.google-chrome
     unstable.gimp                                                     # Photo editor
-    unstable.viber                                                    # Chat
     unstable.gapless                                                  # Music player
     unstable.spotify
     deja-dup                                                          # Backup
