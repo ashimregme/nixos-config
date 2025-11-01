@@ -32,6 +32,7 @@
     mission-center
     tailscale
     tailscale-systray
+    cheese
 
     # development - start
     unstable.jetbrains.idea-ultimate
