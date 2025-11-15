@@ -44,28 +44,29 @@
           specialArgs = {
             host = "homestation";
             inherit self inputs username;
-            pkgs = import nixpkgs {
-              system = "x86_64-linux";
-              config = {
-                allowUnfree = true;
-                permittedInsecurePackages = [
-                  "openssl-1.1.1w"
-                  "qbittorrent-4.6.4"
-		              "ventoy-1.1.05"
-                ];
-              };
-              overlays = [
-                overlay-unstable
-                (final: prev: {
-                  tailscale = prev.tailscale.overrideAttrs (old: {
-                    doCheck = false;
-                  });
-                })
-              ];
-              lib = nixpkgs.lib;
-            };
           };
           modules = [
+            inputs.nixpkgs.nixosModules.readOnlyPkgs
+            { nixpkgs.pkgs = import nixpkgs {
+                system = "x86_64-linux";
+                config = {
+                  allowUnfree = true;
+                  permittedInsecurePackages = [
+                    "openssl-1.1.1w"
+                    "qbittorrent-4.6.4"
+                    "ventoy-1.1.05"
+                  ];
+                };
+                overlays = [
+                  overlay-unstable
+                  (final: prev: {
+                    tailscale = prev.tailscale.overrideAttrs (old: {
+                      doCheck = false;
+                    });
+                  })
+                ];
+                lib = nixpkgs.lib;
+              }; }
             ./hosts/homestation
           ];
         };
