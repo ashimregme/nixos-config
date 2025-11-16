@@ -6,6 +6,13 @@
       core-apps.enable = false;
       localsearch.enable = false;
       tinysparql.enable = false;
+      # Note: This enables the system service that provides the native messaging
+      # host for GNOME Shell integration (aka chrome-gnome-shell /
+      # gnome-browser-connector). When Firefox is managed via Home Manager,
+      # you still need to register the host for that Firefox by adding
+      # `gnome-browser-connector` to
+      # `programs.firefox.nativeMessagingHosts.packages` in Home Manager.
+      # See: modules/home/firefox/default.nix
       gnome-browser-connector.enable = true;
     };
   };
