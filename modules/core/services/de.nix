@@ -2,6 +2,8 @@
 
 {
   services = {
+    displayManager.gdm.enable = true;
+    desktopManager.gnome.enable = true;
     gnome = {
       core-apps.enable = false;
       localsearch.enable = false;
@@ -23,7 +25,6 @@
     gnomeExtensions.hibernate-status-button
     gnomeExtensions.just-perfection
     gnomeExtensions.auto-move-windows
-    gnomeExtensions.battery-health-charging
     gnome-calculator
     gnome-disk-utility
     nautilus

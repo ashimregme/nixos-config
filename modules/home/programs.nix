@@ -9,8 +9,10 @@
     };
     git = {
       enable = true;
-      userName = "Ashim Regmi";
-      userEmail = "5734294+ashimregme@users.noreply.github.com";
+      settings.user = {
+        name = "Ashim Regmi";
+        email = "5734294+ashimregme@users.noreply.github.com";
+      };
     };
     gnome-shell = {
       enable = true;

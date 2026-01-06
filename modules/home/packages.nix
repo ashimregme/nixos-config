@@ -35,7 +35,7 @@
     cheese
 
     # development - start
-    unstable.jetbrains.idea-ultimate
+    unstable.jetbrains.idea
     unstable.vscode
     unstable.postman
     unstable.lmstudio
