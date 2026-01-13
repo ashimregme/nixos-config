@@ -23,13 +23,16 @@
     };
 
   # Hibernation - Start
-  boot.kernelParams = ["resume_offset=28624896"]; # sudo filefrag -v /var/lib/swapfile | head
-  boot.resumeDevice = "/dev/disk/by-uuid/23fc474fa-2e1a-480c-9995-02fb245ca93d"; # lsblk -f (root UUID)
+  boot.kernelParams = [
+    "resume_offset=28624896" # sudo filefrag -v /var/lib/swapfile | head
+  ];
+  boot.resumeDevice = "/dev/disk/by-uuid/3fc474fa-2e1a-480c-9995-02fb245ca93d"; # lsblk -f (root UUID)
   powerManagement.enable = true;
   swapDevices = [
     {
       device = "/var/lib/swapfile";
       size = 25 * 1024; # in MB
+      options = [ "discard" ]; # equivalent to swapon --discard
     }
   ];
   # Hibernation - End
