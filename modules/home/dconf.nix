@@ -39,6 +39,7 @@
           "thunderbird.desktop"
           "veracrypt.desktop"
           "org.gnome.DejaDup.desktop"
+          "idea-ultimate.desktop"
           "sublime_text.desktop"
           "idea-ultimate.desktop"
           "guake.desktop"
@@ -81,9 +82,9 @@
       };
 
       "org/gnome/settings-daemon/plugins/power" = {
-        power-button-action = "interactive";
-        sleep-inactive-ac-type = "nothing";
-        sleep-inactive-battery-timeout = 1800;
+        power-button-action = "suspend";
+        sleep-inactive-ac-type = "suspend";
+        sleep-inactive-battery-timeout = 900;
       };
 
       "org/gnome/settings-daemon/plugins/color" = {
