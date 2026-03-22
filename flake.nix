@@ -54,7 +54,7 @@
                   permittedInsecurePackages = [
                     "openssl-1.1.1w"
                     "qbittorrent-4.6.4"
-                    "ventoy-1.1.07"
+                    "ventoy-1.1.10"
                   ];
                 };
                 overlays = [
