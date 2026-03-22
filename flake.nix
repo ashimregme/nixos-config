@@ -32,9 +32,10 @@
           system = prev.system;
           config = {
             allowUnfree = true;
-              permittedInsecurePackages = [
-                "openssl-1.1.1w"
-              ];
+            permittedInsecurePackages = [
+              "openssl-1.1.1w"
+              "openclaw-2026.3.12"
+            ];
           };
         };
       };
@@ -55,6 +56,7 @@
                     "openssl-1.1.1w"
                     "qbittorrent-4.6.4"
                     "ventoy-1.1.10"
+                    "openclaw-2026.3.12"
                   ];
                 };
                 overlays = [

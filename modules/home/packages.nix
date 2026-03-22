@@ -42,6 +42,7 @@
     unstable.warp-terminal
     unstable.filezilla
     unstable.protonvpn-gui
+    unstable.openclaw
     # development - end
   ];
 }
