@@ -14,10 +14,10 @@
   };
 
   inputs = {
-    nixpkgs.url = "nixpkgs/nixos-25.11";
+    nixpkgs.url = "nixpkgs/nixos-26.05";
     nixpkgs-unstable.url = "nixpkgs/nixos-unstable";
     home-manager = {
-      url = "github:nix-community/home-manager/release-25.11";
+      url = "github:nix-community/home-manager/release-26.05";
       inputs.nixpkgs.follows = "nixpkgs";
     };
   };
@@ -32,9 +32,9 @@
           system = prev.system;
           config = {
             allowUnfree = true;
-              permittedInsecurePackages = [
-                "openssl-1.1.1w"
-              ];
+            permittedInsecurePackages = [
+              "openssl-1.1.1w"
+            ];
           };
         };
       };
@@ -54,7 +54,7 @@
                   permittedInsecurePackages = [
                     "openssl-1.1.1w"
                     "qbittorrent-4.6.4"
-                    "ventoy-1.1.10"
+                    "ventoy-1.1.12"
                   ];
                 };
                 overlays = [

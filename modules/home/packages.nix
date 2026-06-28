@@ -16,7 +16,7 @@
     gparted
     veracrypt
     ventoy-full
-    neofetch
+#    neofetch --removed in 26.05
     aria2
     zip
     unzip
@@ -41,7 +41,7 @@
     unstable.lmstudio
     unstable.warp-terminal
     unstable.filezilla
-    unstable.protonvpn-gui
+    unstable.protonvpn
     # development - end
   ];
 }
