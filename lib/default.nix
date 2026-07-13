@@ -16,10 +16,9 @@ let
   mkPkgs =
     nixpkgs: system:
     import nixpkgs {
-      inherit system;
+      localSystem = { inherit system; };
       config = pkgsConfig;
       overlays = import ../overlays { inherit inputs; };
-      lib = inputs.nixpkgs.lib;
     };
 
   mkHost =
