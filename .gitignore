@@ -1,1 +1,4 @@
 .idea/
+nix.conf
+users/*/password.hash
+result

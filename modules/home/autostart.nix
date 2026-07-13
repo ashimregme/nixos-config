@@ -1,11 +1,6 @@
-{ config, pkgs, inputs, username, ... }:
+{ config, pkgs, ... }:
 
 {
-#  xdg.configFile."autostart/protonvpn-app.desktop" = {
-#    enable = true;
-#    source = "${pkgs.protonvpn-gui}/share/applications/protonvpn-app.desktop";
-#  };
-
   xdg.configFile."autostart/thunderbird.desktop" = {
     enable = true;
     source = "${pkgs.thunderbird}/share/applications/thunderbird.desktop";
@@ -13,7 +8,7 @@
 
   xdg.configFile."autostart/firefox.desktop" = {
     enable = true;
-    source = "${pkgs.firefox}/share/applications/firefox.desktop";
+    source = "${pkgs.unstable.firefox}/share/applications/firefox.desktop";
   };
 
   xdg.configFile."autostart/guake.desktop" = {
@@ -21,8 +16,8 @@
     source = "${pkgs.guake}/share/applications/guake.desktop";
   };
 
-  xdg.configFile."autostart/idea-ultimate.desktop" = {
+  xdg.configFile."autostart/jetbrains-idea.desktop" = {
     enable = true;
-    source = "${pkgs.guake}/share/applications/idea-ultimate.desktop";
+    source = "${pkgs.unstable.jetbrains.idea}/share/applications/jetbrains-idea.desktop";
   };
 }

@@ -2,7 +2,8 @@
 
 {
   imports = [
-    ./hardware-configuration.nix # Include the results of the hardware scan.
-    ./../../modules/core
+    ./hardware-configuration.nix
+    ../../modules/nixos
+    ./host.nix
   ];
 }

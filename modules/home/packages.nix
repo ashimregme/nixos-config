@@ -37,6 +37,8 @@
     # development - start
     unstable.jetbrains.idea
     unstable.vscode
+    unstable.code-cursor
+    unstable.antigravity
     unstable.postman
     unstable.lmstudio
     unstable.warp-terminal
