@@ -1,13 +1,14 @@
 {
   config,
   pkgs,
+  flakeRoot,
   username,
   ...
 }:
 {
   environment.sessionVariables = {
     LIBVIRT_DEFAULT_URI = [ "qemu:///system" ];
-    NIX_CONF_DIR = "/home/ashim/nixos-config";
+    NIX_CONF_DIR = flakeRoot;
   };
   virtualisation = {
     docker = {

@@ -1,18 +1,6 @@
 {
   description = "NixOS configuration";
 
-  nixConfig = {
-    # will be appended to the system-level substituters
-    extra-substituters = [
-      "https://nix-community.cachix.org"
-    ];
-
-    # will be appended to the system-level trusted-public-keys
-    extra-trusted-public-keys = [
-      "nix-community.cachix.org-1:mB9FSh9qf2dCimDSUo8Zy7bkq5CX+/rkCWyvRCYg3Fs="
-    ];
-  };
-
   inputs = {
     nixpkgs.url = "nixpkgs/nixos-26.05";
     nixpkgs-unstable.url = "nixpkgs/nixos-unstable";
@@ -22,54 +10,12 @@
     };
   };
 
-  outputs = { self, nixpkgs, nixpkgs-unstable, ... } @inputs:
+  outputs = { self, ... } @inputs:
     let
-      username = "ashim";
-      system = "x86_64-linux";
-      pkgs = nixpkgs.legacyPackages.${system};
-      overlay-unstable = final: prev: {
-        unstable = import nixpkgs-unstable {
-          system = prev.system;
-          config = {
-            allowUnfree = true;
-            permittedInsecurePackages = [
-              "openssl-1.1.1w"
-            ];
-          };
-        };
-      };
+      lib = import ./lib { inherit inputs self; };
     in {
       nixosConfigurations = {
-        homestation = nixpkgs.lib.nixosSystem {
-          specialArgs = {
-            host = "homestation";
-            inherit self inputs username;
-          };
-          modules = [
-            inputs.nixpkgs.nixosModules.readOnlyPkgs
-            { nixpkgs.pkgs = import nixpkgs {
-                system = "x86_64-linux";
-                config = {
-                  allowUnfree = true;
-                  permittedInsecurePackages = [
-                    "openssl-1.1.1w"
-                    "qbittorrent-4.6.4"
-                    "ventoy-1.1.12"
-                  ];
-                };
-                overlays = [
-                  overlay-unstable
-                  (final: prev: {
-                    tailscale = prev.tailscale.overrideAttrs (old: {
-                      doCheck = false;
-                    });
-                  })
-                ];
-                lib = nixpkgs.lib;
-              }; }
-            ./hosts/homestation
-          ];
-        };
+        homestation = lib.mkHost { name = "homestation"; };
       };
     };
 }

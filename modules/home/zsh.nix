@@ -1,4 +1,4 @@
-{ config, pkgs, ... }:
+{ config, pkgs, flakeRoot, host, ... }:
 
 {
   programs.zsh = {
@@ -10,8 +10,8 @@
 
     shellAliases = {
       ll = "ls -halt";
-      nixupd = "sudo nix-channel --update; sudo nix flake update --flake /home/ashim/nixos-config; nixreb";
-      nixreb = "sudo nixos-rebuild switch -I /home/ashim/nixos-config --flake /home/ashim/nixos-config#homestation";
+      nixupd = "sudo nix flake update --flake ${flakeRoot}; nixreb";
+      nixreb = "sudo nixos-rebuild switch --flake ${flakeRoot}#${host}";
       nixcog = "sudo nix-collect-garbage -d; nix-collect-garbage -d; nixreb; sudo nix-collect-garbage -d; nix-collect-garbage -d; nixopt";
       nixopt = "sudo nix-store --optimise";
       nixrepl = "nix repl -f '<nixpkgs>'";

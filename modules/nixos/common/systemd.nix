@@ -12,7 +12,7 @@
 #    };
 #    services.simple-timer = {
 #      serviceConfig.Type = "oneshot";
-#      script = (builtins.readFile ./set-brightness.sh);
+#      script = (builtins.readFile ../../../scripts/set-brightness.sh);
 #    };
 
 #    To prevent getting stuck at shutdown

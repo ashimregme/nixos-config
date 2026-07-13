@@ -1,5 +1,9 @@
 { config, pkgs, ... }:
 
+let
+  gnomeExtensionNames = import ../../../lib/gnome-extensions.nix;
+  gnomeExtensionPackages = map (name: pkgs.gnomeExtensions.${name}) gnomeExtensionNames;
+in
 {
   services = {
     displayManager.gdm.enable = true;
@@ -19,19 +23,14 @@
     };
   };
 
-  environment.systemPackages = with pkgs; [
-    gnomeExtensions.appindicator
-    gnomeExtensions.control-monitor-brightness-and-volume-with-ddcutil
-    gnomeExtensions.hibernate-status-button
-    gnomeExtensions.just-perfection
-    gnomeExtensions.auto-move-windows
+  environment.systemPackages = gnomeExtensionPackages ++ (with pkgs; [
     gnome-calculator
     gnome-disk-utility
     nautilus
     eog
     gnome-clocks
     gnome-tweaks
-  ];
+  ]);
 
   environment.gnome.excludePackages = with pkgs.gnome; [
     pkgs.gnome-tour
