@@ -17,11 +17,28 @@ nix.conf               # Untracked — GitHub access tokens for private flakes
 
 ## Rebuild
 
+Apply configuration changes:
+
 ```bash
-nixos-rebuild switch --flake .#homestation
+nixreb
 ```
 
-Shell aliases (after rebuild): `nixreb`, `nixupd`, `nixcog`, `nixopt`
+This alias runs `sudo nixos-rebuild switch --flake <flakeRoot>#<host>` using the flake path and host from your config.
+
+Other useful aliases (defined in `modules/home/zsh.nix`):
+
+| Alias | What it does |
+|-------|----------------|
+| `nixreb` | Rebuild and switch to the new system |
+| `nixupd` | Update flake inputs, then rebuild |
+| `nixcog` | Collect garbage, rebuild, collect garbage again, then optimise |
+| `nixopt` | Optimise the Nix store |
+
+Full command (if you need it outside a shell with these aliases):
+
+```bash
+sudo nixos-rebuild switch --flake /home/ashim/nixos-config#homestation
+```
 
 ## Secrets
 
