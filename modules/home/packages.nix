@@ -41,7 +41,6 @@
     unstable.antigravity
     unstable.postman
     unstable.lmstudio
-    unstable.warp-terminal
     unstable.filezilla
     unstable.proton-vpn
     # development - end

@@ -1,6 +1,8 @@
 { config, pkgs, flakeRoot, host, ... }:
 
 {
+  home.file.".p10k.zsh".source = ./dotfiles/p10k.zsh;
+
   programs.zsh = {
     enable = true;
     enableCompletion = true;

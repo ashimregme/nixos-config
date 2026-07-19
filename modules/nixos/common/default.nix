@@ -8,6 +8,7 @@
     ./system-packages.nix
     ./programs.nix
     ./security.nix
+    ./services.nix
     ./systemd.nix
     ./system.nix
     ./virtualization.nix
