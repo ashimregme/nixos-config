@@ -103,6 +103,11 @@ in
       };
 
       "org/gnome/shell/extensions/auto-move-windows" = { };
+
+      "org/guake/general" = {
+        restore-tabs-startup = false;
+        save-tabs-when-changed = false;
+      };
     };
   };
 }

@@ -39,4 +39,18 @@ in
   services.udev.packages = with pkgs; [
     gnome-settings-daemon
   ];
+
+  systemd.tmpfiles.settings."10-accounts-service-root" = {
+    "/var/lib/AccountsService/users/root" = {
+      "f+" = {
+        mode = "0600";
+        user = "root";
+        group = "root";
+        argument = ''
+          [User]
+          SystemAccount=true
+        '';
+      };
+    };
+  };
 }
