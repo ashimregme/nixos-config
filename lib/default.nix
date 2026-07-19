@@ -31,7 +31,7 @@ let
     inputs.nixpkgs.lib.nixosSystem {
       specialArgs = {
         host = name;
-        flakeRoot = self.outPath;
+        flakeRoot = "/home/${username}/nixos-config";
         inherit self inputs username;
       };
       modules = [
