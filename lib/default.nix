@@ -37,6 +37,7 @@ let
       modules = [
         inputs.nixpkgs.nixosModules.readOnlyPkgs
         { nixpkgs.pkgs = mkPkgs inputs.nixpkgs system; }
+        inputs.lanzaboote.nixosModules.lanzaboote
         ../hosts/${name}
       ];
     };
