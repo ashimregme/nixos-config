@@ -1,9 +1,13 @@
-{ config, pkgs, ... }:
+{ pkgs, username, ... }:
 
+let
+  gnomeExtensionNames = import ../../../lib/gnome-extensions.nix;
+  enabledExtensionUuids = map (name: pkgs.gnomeExtensions.${name}.extensionUuid) gnomeExtensionNames;
+in
 {
-  dconf = {
-    enable = true;
-    settings = {
+  home-manager.users.${username} = {
+    dconf.enable = true;
+    dconf.settings = {
       "org/gnome/settings-daemon/plugins/media-keys" = {
         custom-keybindings = [
           "/org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom0/"
@@ -22,26 +26,15 @@
       };
       "org/gnome/shell" = {
         disable-user-extensions = false;
-        enabled-extensions = with pkgs.gnomeExtensions; [
-          control-monitor-brightness-and-volume-with-ddcutil.extensionUuid
-          gsconnect.extensionUuid
-          appindicator.extensionUuid
-          hibernate-status-button.extensionUuid
-          just-perfection.extensionUuid
-          auto-move-windows.extensionUuid
-          battery-health-charging.extensionUuid
-        ];
+        enabled-extensions = enabledExtensionUuids;
         favorite-apps = [
           "org.gnome.Nautilus.desktop"
           "firefox.desktop"
           "chromium-browser.desktop"
-#          "protonvpn-app.desktop"
           "thunderbird.desktop"
           "veracrypt.desktop"
           "org.gnome.DejaDup.desktop"
-          "idea-ultimate.desktop"
-          "sublime_text.desktop"
-          "idea-ultimate.desktop"
+          "jetbrains-idea.desktop"
           "guake.desktop"
           "gimp.desktop"
           "org.qbittorrent.qBittorrent.desktop"
@@ -55,7 +48,7 @@
         edge-tiling = true;
         focus-change-on-pointer-rest = true;
         workspaces-only-on-primary = true;
-        experimental-features = ["scale-monitor-framebuffer" "xwayland-native-scaling"];
+        experimental-features = [ "scale-monitor-framebuffer" "xwayland-native-scaling" ];
       };
 
       "org/gnome/desktop/interface" = {
@@ -105,12 +98,15 @@
 
       # To avoid "no default hypervisor" warning, see: https://nixos.wiki/wiki/Virt-manager
       "org/virt-manager/virt-manager/connections" = {
-        autoconnect = ["qemu:///system"];
-        uris = ["qemu:///system"];
+        autoconnect = [ "qemu:///system" ];
+        uris = [ "qemu:///system" ];
       };
 
-      "org/gnome/shell/extensions/auto-move-windows" = {
+      "org/gnome/shell/extensions/auto-move-windows" = { };
 
+      "org/guake/general" = {
+        restore-tabs-startup = false;
+        save-tabs-when-changed = false;
       };
     };
   };
