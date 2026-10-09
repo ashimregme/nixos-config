@@ -5,7 +5,7 @@
     unstable.qbittorrent
 #    unstable.sublime4
     unstable.shotwell
-    unstable.libreoffice-fresh
+    unstable.libreoffice
     unstable.vlc
     unstable.ungoogled-chromium
     unstable.google-chrome
@@ -15,8 +15,7 @@
     deja-dup                                                          # Backup
     gparted
     veracrypt
-    ventoy-full
-#    neofetch --removed in 26.05
+#    ventoy-full                                                      # nix build issues
     aria2
     zip
     unzip
@@ -37,8 +36,6 @@
     # development - start
     unstable.jetbrains.idea
     unstable.vscode
-    unstable.code-cursor
-    unstable.antigravity-ide
     unstable.postman
     unstable.lmstudio
     unstable.filezilla

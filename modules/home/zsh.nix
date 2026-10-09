@@ -12,7 +12,8 @@
 
     shellAliases = {
       ll = "ls -halt";
-      nixupd = "sudo nix flake update --flake ${flakeRoot} --extra-experimental-features nix-command --extra-experimental-features flakes; nixreb";
+      nixupd = "sudo nix --extra-experimental-features \"nix-command flakes\" flake update --flake ${flakeRoot}; nixreb";
+      hmupd = "sudo nix --extra-experimental-features \"nix-command flakes\" flake update home-manager --flake ${flakeRoot}; nixreb";
       nixreb = "sudo nixos-rebuild switch --flake ${flakeRoot}#${host}";
       nixcog = "sudo nix-collect-garbage -d; nix-collect-garbage -d; nixreb; sudo nix-collect-garbage -d; nix-collect-garbage -d; nixopt";
       nixopt = "sudo nix-store --optimise";
